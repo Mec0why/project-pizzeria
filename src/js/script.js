@@ -1,6 +1,6 @@
-/* global Handlebars, utils, dataSource */ // eslint-disable-line 
+/* global Handlebars, utils, dataSource */ // eslint-disable-line
 {
-  'use strict';
+  ('use strict');
 
   const select = {
     templateOf: {
@@ -44,15 +44,25 @@
       defaultValue: 1,
       defaultMin: 1,
       defaultMax: 9,
-    }
+    },
   };
 
   const templates = {
-    menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
+    menuProduct: Handlebars.compile(
+      document.querySelector(select.templateOf.menuProduct).innerHTML
+    ),
   };
 
+  class Product {
+    constructor() {
+      const thisProduct = this;
+
+      console.log('newProduct:', thisProduct);
+    }
+  }
+
   const app = {
-    init: function(){
+    init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
       console.log('thisApp:', thisApp);
