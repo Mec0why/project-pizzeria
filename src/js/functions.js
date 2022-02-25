@@ -1,4 +1,4 @@
-/* global Handlebars */
+/* global Handlebars */ // eslint-disable-line 
 
 const utils = {}; // eslint-disable-line no-unused-vars
 
@@ -9,7 +9,7 @@ utils.createDOMFromHTML = function(htmlString) {
 };
 
 utils.createPropIfUndefined = function(obj, key, value = []){
-  if(!obj.hasOwnProperty(key)){
+  if(!obj.hasOwnProperty(key)){ // eslint-disable-line 
     obj[key] = value;
   }
 };
