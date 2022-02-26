@@ -84,14 +84,17 @@
       const clickableTrigger = thisProduct.element.querySelector(
         select.menuProduct.clickable
       );
+
       clickableTrigger.addEventListener('click', function (event) {
         event.preventDefault();
         const activeProduct = document.querySelector(
           select.all.menuProductsActive
         );
+
         if (activeProduct != null && activeProduct != thisProduct.element) {
           activeProduct.classList.remove('active');
         }
+        
         thisProduct.element.classList.toggle('active');
       });
     }
