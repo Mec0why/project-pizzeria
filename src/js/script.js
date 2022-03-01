@@ -100,6 +100,9 @@
       thisProduct.imageWrapper = thisProduct.element.querySelector(
         select.menuProduct.imageWrapper
       );
+      thisProduct.amountWidgetElem = thisProduct.element.querySelector(
+        select.menuProduct.amountWidget
+      );
     }
 
     initAccordion() {
@@ -184,8 +187,6 @@
   class AmountWidget {
     constructor(element) {
       const thisWidget = this;
-
-
     }
   }
 
