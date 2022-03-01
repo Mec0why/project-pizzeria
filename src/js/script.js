@@ -65,8 +65,6 @@
       thisProduct.initAccordion();
       thisProduct.initOrderForm();
       thisProduct.processOrder();
-
-      console.log('newProduct:', thisProduct);
     }
 
     renderInMenu() {
@@ -124,7 +122,6 @@
 
     initOrderForm() {
       const thisProduct = this;
-      console.log('orderForm:', thisProduct);
 
       thisProduct.form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -147,17 +144,14 @@
       const thisProduct = this;
 
       const formData = utils.serializeFormToObject(thisProduct.form);
-      console.log('formData', formData);
 
       let price = thisProduct.data.price;
 
       for (let paramId in thisProduct.data.params) {
         const param = thisProduct.data.params[paramId];
-        console.log(paramId, param);
 
         for (let optionId in param.options) {
           const option = param.options[optionId];
-          console.log(optionId, option);
 
           if (formData[paramId] && formData[paramId].includes(optionId)) {
             if (option.default != true) {
@@ -187,11 +181,17 @@
     }
   }
 
+  class AmountWidget {
+    constructor(element) {
+      const thisWidget = this;
+
+
+    }
+  }
+
   const app = {
     initMenu: function () {
       const thisApp = this;
-
-      console.log('thisAppData:', thisApp.data);
 
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
