@@ -172,15 +172,12 @@
           const optionImage = thisProduct.imageWrapper.querySelector(
             '.' + paramId + '-' + optionId
           );
-          console.log(optionImage);
 
-          if (formData[paramId] && formData[paramId].includes(optionId)) {
-            if (option.default != true) {
-              optionImage.classList.toogle('active');
-            }
-          } else {
-            if (option.default == true) {
-              optionImage.classList.toggle('active');
+          if (optionImage != null) {
+            if (formData[paramId] && formData[paramId].includes(optionId)) {
+              optionImage.classList.add('active');
+            } else {
+              optionImage.classList.remove('active');
             }
           }
         }
