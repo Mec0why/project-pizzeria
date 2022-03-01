@@ -175,9 +175,9 @@
 
           if (optionImage != null) {
             if (formData[paramId] && formData[paramId].includes(optionId)) {
-              optionImage.classList.add('active');
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
             } else {
-              optionImage.classList.remove('active');
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
         }
