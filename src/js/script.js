@@ -196,6 +196,8 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
+      thisWidget.initActions();
+      thisWidget.setValue(thisWidget.input.value);
     }
 
     getElements(element) {
@@ -218,10 +220,29 @@
 
       const newValue = parseInt(value);
 
-      /*TODO: Add Validation */
+      if (thisWidget.value !== newValue && !isNaN(newValue)) {
+        thisWidget.value = newValue;
+      }
 
-      thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
+    }
+
+    initActions() {
+      const thisWidget = this;
+
+      thisWidget.input.addEventListener('change', function (event) {
+        thisWidget.setValue(thisWidget.input.value);
+      });
+
+      thisWidget.linkDecrease.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisWidget.setValue(--thisWidget.value);
+      });
+
+      thisWidget.linkIncrease.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisWidget.setValue(++thisWidget.value);
+      });
     }
   }
 
