@@ -179,12 +179,11 @@
             }
           }
         }
-
-        /* multiply price by amount */
-        price *= thisProduct.amountWidget.value;
-
-        thisProduct.priceElem.innerHTML = price;
       }
+      /* multiply price by amount */
+      price *= thisProduct.amountWidget.value;
+
+      thisProduct.priceElem.innerHTML = price;
     }
 
     initAmountWidget() {
@@ -196,6 +195,7 @@
         'updated',
         function (event) {
           thisProduct.processOrder();
+          console.log(event);
         }
       );
     }
@@ -247,6 +247,7 @@
       const thisWidget = this;
 
       thisWidget.input.addEventListener('change', function (event) {
+        console.log(event);
         thisWidget.setValue(thisWidget.input.value);
       });
 
