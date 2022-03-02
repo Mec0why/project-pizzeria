@@ -207,7 +207,7 @@
 
       thisWidget.getElements(element);
       thisWidget.initActions();
-      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.setValue(settings.amountWidget.defaultValue);
     }
 
     getElements(element) {
