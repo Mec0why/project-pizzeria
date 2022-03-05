@@ -241,9 +241,37 @@
         amount: thisProduct.amountWidget.value,
         priceSinlge: thisProduct.priceSingle,
         price: thisProduct.priceMultiplied,
-        params: '',
+        params: thisProduct.prepareCartProductParams(),
       };
       return productSummary;
+    }
+
+    prepareCartProductParams() {
+      const thisProduct = this;
+
+      const formData = utils.serializeFormToObject(thisProduct.form);
+
+      let params = {};
+
+      for (let paramId in thisProduct.data.params) {
+        const param = thisProduct.data.params[paramId];
+
+        params[paramId] = {
+          label: param.label,
+          options: {},
+        };
+
+        for (let optionId in param.options) {
+          const option = param.options[optionId];
+          const optionSelected =
+            formData[paramId] && formData[paramId].includes(optionId);
+
+          if (optionSelected) {
+            params[paramId].options[optionId] = option.label;
+          }
+        }
+      }
+      return params;
     }
 
     addToCart() {
@@ -343,6 +371,10 @@
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
         select.cart.toggleTrigger
+      );
+
+      thisCart.dom.productList = thisCart.dom.wrapper.querySelector(
+        select.cart.productList
       );
     }
 
