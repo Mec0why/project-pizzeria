@@ -391,7 +391,15 @@
     add(menuProduct) {
       const thisCart = this;
 
-      console.log('adding Product', menuProduct, thisCart);
+      const generatedHTML = templates.cartProduct(menuProduct);
+
+      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+
+      const menuContainer = document.querySelector(select.cart.productList);
+
+      menuContainer.appendChild(thisCart.element);
+
+      console.log('adding Cart Product', menuProduct, thisCart);
     }
   }
 
