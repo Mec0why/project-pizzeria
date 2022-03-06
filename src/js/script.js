@@ -393,13 +393,11 @@
 
       const generatedHTML = templates.cartProduct(menuProduct);
 
-      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
-      const menuContainer = document.querySelector(select.cart.productList);
+      thisCart.dom.productList.appendChild(generatedDOM);
 
-      menuContainer.appendChild(thisCart.element);
-
-      thisCart.products.push(menuProduct);
+      thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
       console.log('thisCart.products', thisCart.products);
     }
