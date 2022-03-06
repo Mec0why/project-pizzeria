@@ -239,7 +239,7 @@
         id: thisProduct.id,
         name: thisProduct.data.name,
         amount: thisProduct.amountWidget.value,
-        priceSinlge: thisProduct.priceSingle,
+        priceSingle: thisProduct.priceSingle,
         price: thisProduct.priceMultiplied,
         params: thisProduct.prepareCartProductParams(),
       };
