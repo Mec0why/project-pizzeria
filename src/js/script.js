@@ -287,7 +287,7 @@
 
       thisWidget.getElements(element);
       thisWidget.initActions();
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(thisWidget.input.value);
     }
 
     getElements(element) {
@@ -308,6 +308,7 @@
     setValue(value) {
       const thisWidget = this;
 
+      thisWidget.value = settings.amountWidget.defaultValue;
       const newValue = parseInt(value);
 
       if (
@@ -329,7 +330,7 @@
 
       thisWidget.input.addEventListener('change', function (event) {
         console.log(event);
-        thisWidget.setValue(thisWidget.input.value);
+        thisWidget.setValue(thisWidget.value);
       });
 
       thisWidget.linkDecrease.addEventListener('click', function (event) {
