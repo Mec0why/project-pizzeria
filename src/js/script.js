@@ -419,24 +419,27 @@
 
       let deliveryFee = settings.cart.defaultDeliveryFee;
 
-      let totalNumber = 0;
-      let subtotalPrice = 0;
+      thisCart.totalNumber = 0;
+      thisCart.subtotalPrice = 0;
 
-      for (let product in thisCart.products) {
-        totalNumber += product.amount;
-        subtotalPrice += product.price;
+      for (let product of thisCart.products) {
+        thisCart.totalNumber += product.amount;
+        thisCart.subtotalPrice += product.price;
       }
 
-      if (totalNumber <= 0) {
+      if (thisCart.totalNumber <= 0) {
         deliveryFee = 0;
       }
 
-      thisCart.totalPrice = deliveryFee + subtotalPrice;
+      thisCart.totalPrice = deliveryFee + thisCart.subtotalPrice;
 
-      thisCart.dom.totalNumber.innerHTML = totalNumber;
+      thisCart.dom.totalNumber.innerHTML = thisCart.totalNumber;
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
-      thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
-      console.log(totalNumber);
+      thisCart.dom.subtotalPrice.innerHTML = thisCart.subtotalPrice;
+      thisCart.dom.totalPrice.forEach(function (cartProduct) {
+        cartProduct.innerHTML = thisCart.totalPrice;
+      });
+      console.log(thisCart.totaPrice);
     }
   }
 
