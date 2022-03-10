@@ -449,7 +449,7 @@
       thisCart.dom.totalPrice.forEach(function (cartProduct) {
         cartProduct.innerHTML = thisCart.totalPrice;
       });
-      console.log(thisCart.totaPrice);
+      console.log(thisCart.totalPrice);
     }
 
     remove(cartProduct) {
@@ -461,6 +461,7 @@
 
       productsList.splice(productIndex, 1);
 
+      cartProduct.dom.wrapper.remove();
       thisCart.update();
     }
   }
@@ -543,7 +544,6 @@
       });
 
       thisCartProduct.dom.wrapper.dispatchEvent(event);
-      thisCartProduct.dom.wrapper.remove();
     }
 
     initActions() {
