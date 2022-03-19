@@ -135,7 +135,7 @@ class Product {
     /* multiply price by amount */
     thisProduct.priceMultiplied = price *= thisProduct.amountWidget.value;
 
-    thisProduct.priceElem.innerHTML = price;
+    thisProduct.priceElem.innerHTML = thisProduct.priceMultiplied;
   }
 
   initAmountWidget() {

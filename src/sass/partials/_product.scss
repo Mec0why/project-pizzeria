@@ -23,7 +23,7 @@
   &__icon {
     position: absolute;
     color: $color-main;
-    right: calc($base-size * 5);
+    right: calc($base-size * -5);
     top: $base-size;
     font-size: calc($base-size * 1.5);
     transition: $transition;
