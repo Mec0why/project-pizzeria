@@ -40,7 +40,7 @@ class Booking {
     thisBooking.peopleAmount = new AmountWidget(thisBooking.dom.peopleAmount);
     thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
 
-    thisBooking.dom.initWidgets.addEventListener('updated', function () {
+    thisBooking.dom.wrapper.addEventListener('updated', function () {
       thisBooking.updateDOM();
     });
   }
