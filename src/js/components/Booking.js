@@ -140,8 +140,8 @@ class Booking {
   updateDOM() {
     const thisBooking = this;
 
-    thisBooking.date = thisBooking.datePickerElem.value;
-    thisBooking.hour = utils.hourToNumber(thisBooking.hourPickerElem.value);
+    thisBooking.date = thisBooking.datePicker.value;
+    thisBooking.hour = utils.hourToNumber(thisBooking.hourPicker.value);
 
     let allAvailable = false;
 
