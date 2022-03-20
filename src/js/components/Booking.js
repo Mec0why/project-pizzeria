@@ -41,7 +41,7 @@ class Booking {
     thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
 
     thisBooking.dom.wrapper.addEventListener('updated', function () {
-      thisBooking.updateDOM();
+      console.log(thisBooking.dom.wrapper);
     });
   }
 }
