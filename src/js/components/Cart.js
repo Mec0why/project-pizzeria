@@ -10,8 +10,6 @@ class Cart {
 
     thisCart.getElements(element);
     thisCart.initActions();
-
-    console.log('new Cart', thisCart);
   }
 
   getElements(element) {
@@ -74,8 +72,6 @@ class Cart {
 
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
-    console.log('thisCart.products', thisCart.products);
-
     thisCart.update();
   }
 
@@ -104,7 +100,6 @@ class Cart {
     thisCart.dom.totalPrice.forEach(function (cartProduct) {
       cartProduct.innerHTML = thisCart.totalPrice;
     });
-    console.log(thisCart.totalPrice);
   }
 
   remove(cartProduct) {

@@ -82,8 +82,6 @@ const app = {
     fetch(url)
       .then((rawResponse) => rawResponse.json())
       .then((parsedResponse) => {
-        console.log(parsedResponse);
-
         /* Save parsedResponse as thisApp.data.products */
 
         thisApp.data.products = parsedResponse;
@@ -92,8 +90,6 @@ const app = {
 
         thisApp.initMenu();
       });
-
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
 
   init: function () {
