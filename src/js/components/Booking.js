@@ -207,6 +207,14 @@ class Booking {
     );
 
     thisBooking.dom.tables = element.querySelectorAll(select.booking.tables);
+
+    thisBooking.dom.allTables = element.querySelector(
+      select.containerOf.floorPlan
+    );
+
+    thisBooking.dom.selectedTables = element.querySelector(
+      select.booking.selectedTables
+    );
   }
 
   initWidgets() {
@@ -220,6 +228,38 @@ class Booking {
     thisBooking.dom.wrapper.addEventListener('updated', function () {
       thisBooking.updateDOM();
     });
+
+    thisBooking.dom.allTables.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      const targetTable = event.target;
+      console.log(targetTable);
+
+      thisBooking.initTables(targetTable);
+    });
+  }
+
+  initTables(element) {
+    const thisBooking = this;
+
+    if (element.className.includes(classNames.booking.tableObj)) {
+      if (element.className.includes(classNames.booking.tableBooked)) {
+        return 'Table Reserved';
+      } else if (
+        thisBooking.element.querySelector(select.booking.selectedTables) !=
+          null &&
+        thisBooking.element.querySelector(select.booking.selectedTables) !=
+          element
+      ) {
+        thisBooking.element
+          .querySelector(select.booking.selectedTables)
+          .classList.remove(classNames.booking.selected);
+      }
+      element.classList.toggle(classNames.booking.selected);
+    }
+
+    console.log(element);
+    console.log(thisBooking);
   }
 }
 
