@@ -147,7 +147,8 @@ class Booking {
 
     const tables = thisBooking.element.querySelectorAll(select.booking.tables);
     for (let table of tables) {
-      table.classList.remove(classNames.booking.tableClicked);
+      table.classList.remove(classNames.booking.tableBooked);
+      table.classList.remove(classNames.booking.selected);
     }
 
     if (
@@ -233,7 +234,6 @@ class Booking {
       event.preventDefault();
 
       const targetTable = event.target;
-      console.log(targetTable);
 
       thisBooking.initTables(targetTable);
     });
@@ -242,24 +242,30 @@ class Booking {
   initTables(element) {
     const thisBooking = this;
 
+    let selectedTable = thisBooking.element.querySelector(
+      select.booking.selectedTables
+    );
+
+    let tableId = '';
+
     if (element.className.includes(classNames.booking.tableObj)) {
       if (element.className.includes(classNames.booking.tableBooked)) {
-        return 'Table Reserved';
-      } else if (
-        thisBooking.element.querySelector(select.booking.selectedTables) !=
-          null &&
-        thisBooking.element.querySelector(select.booking.selectedTables) !=
-          element
-      ) {
-        thisBooking.element
-          .querySelector(select.booking.selectedTables)
-          .classList.remove(classNames.booking.selected);
-      }
-      element.classList.toggle(classNames.booking.selected);
-    }
+        alert(classNames.booking.tableReserved);
+      } else {
+        if (selectedTable != null && selectedTable != element) {
+          selectedTable.classList.remove(classNames.booking.selected);
+        }
+        if (!element.className.includes(classNames.booking.selected)) {
+          element.classList.add(classNames.booking.selected);
 
-    console.log(element);
-    console.log(thisBooking);
+          const elementId = element.getAttribute(
+            settings.booking.tableIdAttribute
+          );
+          tableId = elementId;
+          thisBooking.tableId = parseInt(tableId);
+        }
+      }
+    }
   }
 }
 

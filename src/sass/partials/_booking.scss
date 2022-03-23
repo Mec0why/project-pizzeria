@@ -190,8 +190,8 @@
     }
 
     &.selected {
-      cursor: not-allowed;
-      color: lighten($color-success, 40%);
+      cursor: pointer;
+      color: lighten($color-dark, 40%);
 
       &::after {
         position: absolute;
