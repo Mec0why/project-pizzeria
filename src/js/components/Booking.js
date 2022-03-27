@@ -275,7 +275,7 @@ class Booking {
   initTables(element) {
     const thisBooking = this;
 
-    let selectedTable = thisBooking.element.querySelector(
+    let selectedTables = thisBooking.element.querySelectorAll(
       select.booking.selectedTables
     );
 
@@ -284,19 +284,19 @@ class Booking {
     if (element.className.includes(classNames.booking.tableObj)) {
       if (element.className.includes(classNames.booking.tableBooked)) {
         alert(classNames.booking.tableReserved);
+      }
+      if (element.className.includes(classNames.booking.selected)) {
+        element.classList.remove(classNames.booking.selected);
       } else {
-        if (selectedTable != null && selectedTable != element) {
+        element.classList.add(classNames.booking.selected);
+        for (let selectedTable of selectedTables) {
           selectedTable.classList.remove(classNames.booking.selected);
         }
-        if (!element.className.includes(classNames.booking.selected)) {
-          element.classList.add(classNames.booking.selected);
-
-          const elementId = element.getAttribute(
-            settings.booking.tableIdAttribute
-          );
-          tableId = elementId;
-          thisBooking.tableId = parseInt(tableId);
-        }
+        const elementId = element.getAttribute(
+          settings.booking.tableIdAttribute
+        );
+        tableId = elementId;
+        thisBooking.tableId = parseInt(tableId);
       }
     }
   }
