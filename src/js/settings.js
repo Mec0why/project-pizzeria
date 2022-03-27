@@ -43,6 +43,9 @@ export const select = {
       output: '.output',
     },
   },
+  homePage: {
+    openingHours: '.home-opening .opening-hours',
+  },
   booking: {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
