@@ -1,11 +1,13 @@
 import { select, templates } from '../settings.js';
 import utils from '../utils.js';
+import Carousel from './Carousel.js';
 
 class HomePage {
   constructor(element) {
     const thisHome = this;
 
     thisHome.render(element);
+    thisHome.initCarousel(thisHome.dom.carousel);
   }
 
   render(element) {
@@ -22,6 +24,12 @@ class HomePage {
 
     thisHome.dom = {};
     thisHome.dom.wrapper = element;
+
+    thisHome.dom.carousel = element.querySelector(select.containerOf.carousel);
+  }
+
+  initCarousel(element) {
+    new Carousel(element);
   }
 }
 

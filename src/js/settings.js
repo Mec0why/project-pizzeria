@@ -4,6 +4,7 @@ export const select = {
     cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
     homePage: '#template-home-page',
+    carousel: '#template-carousel',
   },
   containerOf: {
     menu: '#product-list',
@@ -13,6 +14,7 @@ export const select = {
     floorPlan: '.floor-plan',
     starters: '.booking-options',
     homePage: '.home-page-wrapper',
+    carousel: '.main-carousel',
   },
   all: {
     menuProducts: '#product-list > .product',

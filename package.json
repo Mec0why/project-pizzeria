@@ -35,6 +35,7 @@
         "copyfiles": "^2.1.0",
         "eslint": "^8.11.0",
         "flatpickr": "^4.6.11",
+        "flickity": "^3.0.0",
         "globstar": "^1.0.0",
         "html-validate": "^6.5.0",
         "mkdirp": "^0.5.1",
