@@ -317,14 +317,6 @@ class Booking {
       address: thisBooking.dom.address.value,
     };
 
-    thisBooking.makeBooked(
-      payload.date,
-      payload.hour,
-      payload.duration,
-      payload.table
-    );
-    console.log(payload);
-
     const options = {
       method: 'POST',
       headers: {
@@ -333,9 +325,15 @@ class Booking {
       body: JSON.stringify(payload),
     };
 
-    fetch(url, options);
-    thisBooking.updateDOM();
-    console.log(thisBooking.booked);
+    fetch(url, options).then(
+      thisBooking.makeBooked(
+        payload.date,
+        payload.hour,
+        payload.duration,
+        payload.table
+      )
+    );
+    console.log(payload);
   }
 }
 
