@@ -1,0 +1,18 @@
+.main-carousel .carousel-cell {
+  display: flex;
+
+}
+
+.carousel-cell .col-4 {
+  flex: 0 0 33.3333%;
+
+  &img {
+    height: 100vh;
+    max-width: 250px;
+    max-height: 250px;
+  }
+}
+
+.carousel-cell .col-8 {
+  flex: 0 0 66.6666%;
+}
