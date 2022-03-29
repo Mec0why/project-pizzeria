@@ -1,18 +1,25 @@
+.flickity-slider {
+  max-width: 100vh;
+}
+
 .main-carousel .carousel-cell {
   display: flex;
-
+  position: relative;
+  height: 100%;
 }
 
 .carousel-cell .col-4 {
-  flex: 0 0 33.3333%;
-
-  &img {
-    height: 100vh;
-    max-width: 250px;
-    max-height: 250px;
-  }
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 .carousel-cell .col-8 {
-  flex: 0 0 66.6666%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 10% 0 5%;
+}
+
+.carousel-cell img {
+  width: 100%;
+  margin: 0 auto;
 }
