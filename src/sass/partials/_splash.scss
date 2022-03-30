@@ -1,5 +1,5 @@
 .container-splash {
-  margin: 45px 0;
+  margin: 50px 0 75px;
 }
 
 .row-splash {
@@ -30,6 +30,7 @@
     margin: 5px 0 0 0;
     font-weight: bold;
     font-size: 16px;
+    text-align: justify;
   }
 }
 
@@ -37,6 +38,7 @@
 .splash-booking {
   display: flex;
   justify-content: center;
+  color: $color-light;
 }
 
 .splash-order h1,
@@ -44,6 +46,10 @@
   position: absolute;
   align-self: center;
   justify-self: center;
+}
+
+.splash-order {
+  margin-right: 15px;
 }
 
 .row-splash img {
@@ -60,4 +66,14 @@
 .bottom {
   align-items: center;
   justify-content: center;
+  background-color: $color-main;
+  text-align: justify;
+  margin-top: 15px;
+
+  h1,
+  p {
+    margin: 0;
+    text-align: center;
+    color: $color-light;
+  }
 }
