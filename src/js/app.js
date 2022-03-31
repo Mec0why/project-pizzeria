@@ -59,6 +59,23 @@ const app = {
     const homeElement = document.querySelector(select.containerOf.homePage);
 
     thisApp.homePage = new HomePage(homeElement);
+
+    thisApp.homePage.redirectLinks = document.querySelectorAll(
+      select.splash.links
+    );
+
+    for (let redirectLink of thisApp.homePage.redirectLinks) {
+      redirectLink.addEventListener('click', function (event) {
+        const clickedElement = this;
+        event.preventDefault();
+
+        const id = clickedElement.getAttribute('href').replace('#', '');
+
+        thisApp.activatePage(id);
+
+        window.location.hash = '#/' + id;
+      });
+    }
   },
 
   initBooking: function () {

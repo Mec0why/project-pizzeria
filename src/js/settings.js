@@ -15,6 +15,7 @@ export const select = {
     starters: '.booking-options',
     homePage: '.home-page-wrapper',
     carousel: '.main-carousel',
+    splashTop: '.row-splash .top',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -79,6 +80,9 @@ export const select = {
     price: '.cart__product-price',
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
+  },
+  splash: {
+    links: '.container-splash a',
   },
 };
 
