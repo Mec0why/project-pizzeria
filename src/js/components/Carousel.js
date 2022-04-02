@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* global Flickity*/
 import { select } from '../settings.js';
 
 class Carousel {
