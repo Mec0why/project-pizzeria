@@ -15,7 +15,7 @@ export const select = {
     starters: '.booking-options',
     homePage: '.home-page-wrapper',
     carousel: '.main-carousel',
-    splashTop: '.row-splash .top',
+    splashTop: '.splash__box--semiwide',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -82,7 +82,7 @@ export const select = {
     remove: '[href="#remove"]',
   },
   splash: {
-    links: '.container-splash a',
+    links: '.splash__container a',
   },
 };
 
